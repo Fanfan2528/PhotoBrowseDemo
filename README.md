@@ -13,7 +13,10 @@ A photo browse control, contain following functions: double tap to enlarge or re
 PhotoBrowseViewController* controller = [[PhotoBrowseViewController alloc] initWithImage:image lastPageFrame:self.imageView.frame];
 ```
 3. image代表传入的图片；
-4. lastPageFrame是图片在当前UIViewController显示的UIView中对应的frame;
+4. lastPageFrame是图片在当前UIViewController显示的UIView中对应的frame;如果image嵌套在子View中，需要用如下代码转换一下frame:
+```
+CGRect frame = [self.imageView convertRect:self.imageView.bounds toView:self.view];
+```
 5. 设置controller的present模式，推荐使用如下代码：
 ```
 controller.modalPresentationStyle = UIModalPresentationOverFullScreen;
