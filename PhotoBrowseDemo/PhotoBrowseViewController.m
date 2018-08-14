@@ -60,10 +60,9 @@
 
   self.photoImageView =
       [[UIImageView alloc] initWithFrame:self.photoOrginFrame];
+  self.photoImageView.contentMode = UIViewContentModeScaleAspectFit;
   self.scrollView.contentSize = self.photoImageView.frame.size;
-  self.photoImageView.contentMode = UIViewContentModeScaleAspectFill;
   self.photoImageView.clipsToBounds = YES;
-
   [self.scrollView addSubview:self.photoImageView];
   self.photoImageView.image = self.photo;
 
@@ -78,8 +77,8 @@
   [oneTapGesture requireGestureRecognizerToFail:doubleTapGesture];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-  [super viewDidAppear:animated];
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
   [self.navigationController setNavigationBarHidden:YES];
   if (!self.viewDidAppear) {
     [self showPhoto];
@@ -128,9 +127,6 @@
 - (void)oneTapEvent {
   self.scrollView.zoomScale = 1.0;
   self.scrollView.userInteractionEnabled = NO;
-//  [[UIApplication sharedApplication]
-//      setStatusBarHidden:NO
-//           withAnimation:UIStatusBarAnimationNone];
   [UIView animateWithDuration:0.25
       animations:^{
         self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
@@ -138,25 +134,8 @@
         self.scrollView.backgroundColor = [UIColor clearColor];
       }
       completion:^(BOOL finished) {
-        [self cancelWithAnimated:NO];
+        [self dismissViewControllerAnimated:true completion:nil];
       }];
-}
-
-- (void)cancelWithAnimated:(BOOL)animated {
-  [self.view endEditing:YES];
-  if (self.presentingViewController != nil) {
-    UIStatusBarStyle statusBarStyle = UIStatusBarStyleDefault;
-    if ([self.presentingViewController
-         isKindOfClass:[UINavigationController class]]) {
-      statusBarStyle = [[[(UINavigationController*)
-                          self.presentingViewController viewControllers]
-                         lastObject] preferredStatusBarStyle];
-    } else {
-      statusBarStyle = self.presentingViewController.preferredStatusBarStyle;
-    }
-    [UIApplication sharedApplication].statusBarStyle = statusBarStyle;
-  }
-  [self dismissViewControllerAnimated:animated completion:nil];
 }
 
 - (void)doubleTapEvent:(UITapGestureRecognizer*)tap {
@@ -191,6 +170,10 @@
   self.scrollView.contentInset = UIEdgeInsetsMake(top, left, top, left);
   self.scrollView.contentSize = CGSizeMake(targetWidth * scrollView.zoomScale,
                                            targetHeight * scrollView.zoomScale);
+}
+
+- (UIView*)viewForZoomingInScrollView:(UIScrollView*)scrollView {
+  return self.photoImageView;
 }
 
 

@@ -15,8 +15,4 @@
 @property(strong, nonatomic) UIImage* photo;
 @property(assign, nonatomic) CGRect photoOrginFrame;
 
-@property(assign, nonatomic, readonly) BOOL isClosing;
-
-- (void)oneTapEvent;
-
 @end

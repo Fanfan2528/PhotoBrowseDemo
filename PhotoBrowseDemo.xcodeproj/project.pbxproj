@@ -13,6 +13,9 @@
 		A99AA069211C216800CD111E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A99AA068211C216800CD111E /* Assets.xcassets */; };
 		A99AA06C211C216800CD111E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99AA06A211C216800CD111E /* LaunchScreen.storyboard */; };
 		A99AA06F211C216800CD111E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A99AA06E211C216800CD111E /* main.m */; };
+		A99AA078211C217600CD111E /* PhotoBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99AA075211C217600CD111E /* PhotoBrowseViewController.m */; };
+		A99AA079211C217600CD111E /* PhotoBrowseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99AA076211C217600CD111E /* PhotoBrowseViewController.xib */; };
+		A99AA07B211C217C00CD111E /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A99AA07A211C217C00CD111E /* 1.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,10 @@
 		A99AA06B211C216800CD111E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A99AA06D211C216800CD111E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A99AA06E211C216800CD111E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A99AA075211C217600CD111E /* PhotoBrowseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoBrowseViewController.m; sourceTree = "<group>"; };
+		A99AA076211C217600CD111E /* PhotoBrowseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoBrowseViewController.xib; sourceTree = "<group>"; };
+		A99AA077211C217600CD111E /* PhotoBrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoBrowseViewController.h; sourceTree = "<group>"; };
+		A99AA07A211C217C00CD111E /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +69,12 @@
 				A99AA060211C216700CD111E /* AppDelegate.m */,
 				A99AA062211C216700CD111E /* ViewController.h */,
 				A99AA063211C216700CD111E /* ViewController.m */,
+				A99AA077211C217600CD111E /* PhotoBrowseViewController.h */,
+				A99AA075211C217600CD111E /* PhotoBrowseViewController.m */,
+				A99AA076211C217600CD111E /* PhotoBrowseViewController.xib */,
 				A99AA065211C216700CD111E /* Main.storyboard */,
 				A99AA068211C216800CD111E /* Assets.xcassets */,
+				A99AA07A211C217C00CD111E /* 1.jpg */,
 				A99AA06A211C216800CD111E /* LaunchScreen.storyboard */,
 				A99AA06D211C216800CD111E /* Info.plist */,
 				A99AA06E211C216800CD111E /* main.m */,
@@ -129,8 +140,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A99AA06C211C216800CD111E /* LaunchScreen.storyboard in Resources */,
+				A99AA079211C217600CD111E /* PhotoBrowseViewController.xib in Resources */,
 				A99AA069211C216800CD111E /* Assets.xcassets in Resources */,
 				A99AA067211C216700CD111E /* Main.storyboard in Resources */,
+				A99AA07B211C217C00CD111E /* 1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A99AA064211C216700CD111E /* ViewController.m in Sources */,
+				A99AA078211C217600CD111E /* PhotoBrowseViewController.m in Sources */,
 				A99AA06F211C216800CD111E /* main.m in Sources */,
 				A99AA061211C216700CD111E /* AppDelegate.m in Sources */,
 			);
@@ -286,6 +300,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XKN5CG9S5B;
 				INFOPLIST_FILE = PhotoBrowseDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,6 +318,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XKN5CG9S5B;
 				INFOPLIST_FILE = PhotoBrowseDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
